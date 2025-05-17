@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "TK达人信息抓取器",
+  "version": "1.0",
+  "description": "抓取TK达人信息的Chrome扩展",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.tiktok.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "images/icon.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.tiktok.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "128": "images/icon.svg"
+  }
+} 
